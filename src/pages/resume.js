@@ -4,10 +4,10 @@ import Layout from '../components/Layout'
 export default function Resume() {
   return (
     <Layout>
-        <div>
+        <article>
             <h2>Resume</h2>
             <p>TODO</p>
-        </div>
+        </article>
     </Layout>
     
   )

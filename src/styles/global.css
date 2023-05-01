@@ -1,10 +1,18 @@
+/* Global variables that will be used throughout the site */
 :root {
-    --unit-space: 4;
-    --primary-color: #427AA1;
-    --secondary-color: #75704E;
-    --primary-text-color: #25283D;
-    --secondary-text-color: #585123;
-    --accent-color: #BDD2A6;
+    /* Colors picked using https://coolors.co/ */
+    --primary-color: #427AA1; /* UCLA blue*/
+    --primary-text-color: #25283D; /* Space cadet */
+    --accent-color: #BDD2A6; /* Tea green*/
+
+    --unit-space: 1.65rem;
+    --border-weight: 2px;
+
+    /* https://modularscale.com/?16&px&1.2 */
+    --font-0: 0.833rem;
+    --font-1: 1.2rem;
+    --font-2: 1.44rem;
+    --font-3: 1.728rem;
 }
 
 /* Content styles */
@@ -12,15 +20,22 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
     color: var(--primary-color);
+    font-size: var(--font-3);
 }
 
 h2 {
-    color: var(--secondary-color);
+    color: var(--primary-color);
+    font-size: var(--font-2);
+}
+
+h3 {
+    color: var(--accent-color);
+    font-size: var(--font-1);
 }
 
 html, body {
@@ -28,9 +43,8 @@ html, body {
 }
 
 p {
-    margin: 16px auto;
-    line-height: 1.5em;
-    font-size: large;
+    margin: var(--unit-space) auto;
+    line-height: var(--unit-space);
     color:var(--primary-text-color);
 }
 
@@ -41,18 +55,18 @@ p {
 }
 
 .columnRight {
-    padding-left: 40px;
-    border-left: 2px solid;
+    padding-left: calc(var(--unit-space) * 2);
+    border-left: var(--border-weight) solid;
     border-color:var(--accent-color);
 }
 
 .columnLeft {
-    margin-right: 40px;
+    margin-right: calc(var(--unit-space) * 2);
 }
 
 /* Layout styles */
 .layout {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -60,7 +74,7 @@ p {
 nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 40px auto;
+    margin: calc(var(--unit-space) * 2) auto;
 }
 
 nav .navLinks {
@@ -70,12 +84,24 @@ nav .navLinks {
 
 nav a {
     display: inline-blocks;
-    margin-left: 20px;
+    margin-left: var(--unit-space);
     font-weight: 400;
-    padding-bottom: 8px;
-    border-bottom: 2px solid transparent;
+    padding-bottom: calc(var(--unit-space) / 2);
+    border-bottom: var(--border-weight) solid transparent;
 }
 
 nav a:hover {
     border-color: var(--accent-color);
+}
+
+a,
+a:visited {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition-duration: 0.3s;
+  transition-property: color, background-color, border-color;
+}
+
+a:hover {
+    color: var(--accent-color)
 }

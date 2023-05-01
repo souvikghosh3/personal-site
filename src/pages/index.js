@@ -5,7 +5,7 @@ import Layout from "../components/Layout"
 export default function Home() {
   return (
     <Layout>
-      <section className="pictureTextContent">
+      <article className="pictureTextContent">
         <StaticImage
             className="columnLeft"
             src="..\images\portrait_square.jpg"
@@ -19,12 +19,12 @@ export default function Home() {
         <div className="columnRight">
           <p>Hi!</p>
           <p>
-            This page contains my education and work experience, as well as some information
-            about my personal interests.
+            This page contains my education and work experience, as well as some general
+            information about me.
           </p>
           <p>
-            I post in my blog from time to time, so check that out if you're interested
-            in my recent adventures.
+            I post in my blog from time to time, so you can check that out to follow
+            my recent adventures.
           </p>
           <p>
             You can find the source for this site&nbsp;
@@ -39,7 +39,7 @@ export default function Home() {
             Cheers!
           </p>
         </div>
-      </section>
+      </article>
     </Layout>
   )
 }

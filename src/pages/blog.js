@@ -4,10 +4,10 @@ import Layout from '../components/Layout'
 export default function Blog() {
   return (
     <Layout>
-        <div>
+        <article>
             <h2>Blog</h2>
             <p>TODO</p>
-        </div>
+        </article>
     </Layout>
     
   )
