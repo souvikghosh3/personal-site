@@ -5,33 +5,40 @@ import Layout from "../components/Layout"
 export default function Home() {
   return (
     <Layout>
-      <section>
-        <p>Hi! I&apos;m Souvik.</p>
+      <section className="pictureTextContent">
         <StaticImage
-          src="..\images\portrait_square.jpg"
-          alt="head shot"
-          placeholder="blurred"
-          loading="eager"
-          layout="fixed"
-          width={250}
-          height={250}
-        />
-        <p>
-          This page contains my resume, as well as more information about my hobbies.
-          <br />(TODO: add resume and info about hobbies)
-        </p>
-        <p>
-          If you're interested, you can also play Two truths and a Lie to uncover some fun
-          facts about me!
-          <br />(UNDER CONSTRUCTION)
-        </p>
-        <p>
-          Here is the source for this site.
-          <br />(TODO: add github repo link)
-        </p>
-        <p>
-          Cheers!
-        </p>
+            className="columnLeft"
+            src="..\images\portrait_square.jpg"
+            alt="head shot"
+            placeholder="blurred"
+            loading="eager"
+            layout="fixed"
+            width={350}
+            height={350}
+          />
+        <div className="columnRight">
+          <p>Hi!</p>
+          <p>
+            This page contains my education and work experience, as well as some information
+            about my personal interests.
+          </p>
+          <p>
+            I post in my blog from time to time, so check that out if you're interested
+            in my recent adventures.
+          </p>
+          <p>
+            You can find the source for this site&nbsp;
+            <a
+              target="_blank"
+              href={`https://github.com/souvikghosh3/personal-site`}
+              rel="noreferrer">
+              here
+            </a>.
+          </p>
+          <p>
+            Cheers!
+          </p>
+        </div>
       </section>
     </Layout>
   )

@@ -5,7 +5,7 @@ export default function Resume() {
   return (
     <Layout>
         <div>
-            <h1>Resume</h1>
+            <h2>Resume</h2>
             <p>TODO</p>
         </div>
     </Layout>

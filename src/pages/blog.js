@@ -1,11 +1,11 @@
 import React from 'react'
 import Layout from '../components/Layout'
 
-export default function Game() {
+export default function Blog() {
   return (
     <Layout>
         <div>
-            <h1>Two Truths and a Lie</h1>
+            <h2>Blog</h2>
             <p>TODO</p>
         </div>
     </Layout>

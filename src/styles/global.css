@@ -1,0 +1,81 @@
+:root {
+    --unit-space: 4;
+    --primary-color: #427AA1;
+    --secondary-color: #75704E;
+    --primary-text-color: #25283D;
+    --secondary-text-color: #585123;
+    --accent-color: #BDD2A6;
+}
+
+/* Content styles */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+h1 {
+    color: var(--primary-color);
+}
+
+h2 {
+    color: var(--secondary-color);
+}
+
+html, body {
+    min-height: 100%;
+}
+
+p {
+    margin: 16px auto;
+    line-height: 1.5em;
+    font-size: large;
+    color:var(--primary-text-color);
+}
+
+.pictureTextContent {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    text-align:left;
+}
+
+.columnRight {
+    padding-left: 40px;
+    border-left: 2px solid;
+    border-color:var(--accent-color);
+}
+
+.columnLeft {
+    margin-right: 40px;
+}
+
+/* Layout styles */
+.layout {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navbar styles */
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 40px auto;
+}
+
+nav .navLinks {
+    display: inline-block;
+    text-align: right;
+}
+
+nav a {
+    display: inline-blocks;
+    margin-left: 20px;
+    font-weight: 400;
+    padding-bottom: 8px;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+    border-color: var(--accent-color);
+}
