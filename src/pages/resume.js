@@ -1,10 +1,14 @@
 import React from 'react'
+import Layout from '../components/Layout'
 
 export default function Resume() {
   return (
-    <div>
-        <h1>Resume</h1>
-        <p>TODO</p>
-    </div>
+    <Layout>
+        <div>
+            <h1>Resume</h1>
+            <p>TODO</p>
+        </div>
+    </Layout>
+    
   )
 }
