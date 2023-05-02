@@ -3,14 +3,31 @@
  *
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
  */
+import type { GatsbyConfig } from "gatsby";
 
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
-module.exports = {
+const config: GatsbyConfig = {
+  graphqlTypegen: {
+    typesOutputPath: ".cache/gatsby-types.d.ts",
+    generateOnBuild: true,
+  },
+  siteMetadata: {
+    title: "Souvik Ghosh",
+    description: "Souvik Ghosh's personal site.",
+  },
   plugins: [
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`, // Needed for dynamic images
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "src",
+        path: `${__dirname}/src`,
+      },
+    },
+    "gatsby-transformer-sharp", // Needed for dynamic images
+    "gatsby-transformer-yaml",
   ],
-}
+
+};
+
+export default config;

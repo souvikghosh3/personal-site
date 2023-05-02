@@ -1,9 +1,9 @@
 /* Global variables that will be used throughout the site */
 :root {
     /* Colors picked using https://coolors.co/ */
-    --primary-color: #427AA1; /* UCLA blue*/
-    --primary-text-color: #25283D; /* Space cadet */
-    --accent-color: #BDD2A6; /* Tea green*/
+    --primary-color: #427AA1; /* UCLA blue */
+    --text-color: #25283D; /* Space cadet */
+    --accent-color: #9CC5A1; /* Cambridge blue */
 
     --unit-space: 1.65rem;
     --border-weight: 2px;
@@ -23,6 +23,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h1,
+h2,
+h3 {
+    line-height: calc(var(--unit-space) * 2);
+}
+
 h1 {
     color: var(--primary-color);
     font-size: var(--font-3);
@@ -34,7 +40,7 @@ h2 {
 }
 
 h3 {
-    color: var(--accent-color);
+    color: var(--text-color);
     font-size: var(--font-1);
 }
 
@@ -45,7 +51,7 @@ html, body {
 p {
     margin: var(--unit-space) auto;
     line-height: var(--unit-space);
-    color:var(--primary-text-color);
+    color:var(--text-color);
 }
 
 .pictureTextContent {

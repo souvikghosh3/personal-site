@@ -17,7 +17,7 @@ export default function Home() {
             height={350}
           />
         <div className="columnRight">
-          <p>Hi!</p>
+          <p>Hello there!</p>
           <p>
             This page contains my education and work experience, as well as some general
             information about me.

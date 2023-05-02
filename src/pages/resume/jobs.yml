@@ -1,0 +1,67 @@
+- name: Google
+  link: https://about.google/
+  title: Software Engineer
+  location: Mountain View, CA
+  start_date: OCT 2018
+  end_date: MAR 2023
+  details:
+    - >
+      Led full-stack implementation of and launched web application used by
+      3.5K+ users for in-context linguistic review of 50+ localized Google
+      products across 87+ languages.
+    - >
+      Built the web platform used by 200+ Google product teams to manage
+      localization into 150+ languages, translating 100M+ words each year.
+    - >
+      Performed 1000+ code reviews for 100K+ lines of code, upholding
+      code quality for Java and Protobuf.
+    - >
+      Mentored new employees, focusing on developing technical skills and
+      finding teams matching interests and career goals.
+    - >
+      Conducted 15+ technical interviews for engineering and management roles.
+    - >
+      Built Angular components used company-wide.
+- name: Google
+  link: https://about.google/
+  title: Solutions Engineer
+  location: Mountain View, CA
+  start_date: JUL 2017
+  end_date: OCT 2018
+  details:
+    - >
+      Improved localization quality and decreased translation costs for Google
+      products through the deployment of custom Machine Translation (MT)
+      models and integration with third-party MT APIs.
+    - >
+      Ensured timely resolution of bugs and feature requests for localization
+      web platform by triaging tickets and coordinating with Product Managers
+      and Engineers to prioritize and facilitate deployment of changes.
+    - >
+      Saved 500+ engineering hours monthly by organizing and leading org-wide
+      Fixit weeks, addressing tech debt and fostering team culture.
+- name: Google
+  link: https://about.google/
+  title: Software Engineering Intern
+  location: Mountain View, CA
+  start_date: JUN 2016
+  end_date: AUG 2016
+  details:
+    - >
+      Improved stability of Flashrom, a utility to read and write flash memory
+      in Chrome OS, by developing a new testing framework to validate
+      read/write and write-protect functionality and perform endurance testing.
+- name: Northrop Grumman
+  link: https://www.northropgrumman.com/
+  title: Intern
+  location: Annapolis Juction, MD
+  start_date: MAY 2015
+  end_date: AUG 2015
+  details:
+    - >
+      Prototyped system that utilized Software Defined Networking to defend
+      trusted machines by creating dynamic networks of virtual machines to
+      prevent accurate reconnaissance of the network.
+    - >
+      Conducted vulnerability analysis on Android phones using Android Debug
+      Bridge (adb) tools.
