@@ -45,15 +45,15 @@ export default function Resume({ data }: PageProps<Queries.ResumeQuery>) {
             <h2>SKILLS</h2>
 
             <h3>Languages</h3>
-                {data.resumeYaml.languages?.map((language) => (
+                {data.resumeYaml?.languages?.map((language) => (
                     <li key={language}>{language}</li>
                 ))}                
             <h3>Frameworks</h3>
-                {data.resumeYaml.frameworks?.map((framework) => (
+                {data.resumeYaml?.frameworks?.map((framework) => (
                     <li key={framework}>{framework}</li>
                 ))} 
             <h3>Certifications</h3>
-                {data.resumeYaml.certifications?.map((certification) => (
+                {data.resumeYaml?.certifications?.map((certification) => (
                     <li key={certification}>{certification}</li>
                 ))} 
 

@@ -29,8 +29,8 @@ export default function Home() {
           <p>
             You can find the source for this site&nbsp;
             <a
-              target="_blank"
               href={`https://github.com/souvikghosh3/personal-site`}
+              target="_blank"
               rel="noreferrer">
               here
             </a>.
