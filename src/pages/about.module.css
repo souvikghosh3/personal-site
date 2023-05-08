@@ -1,0 +1,28 @@
+/* Styles for showing a picture and text side-by-side */
+.pictureTextContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align:left;
+}
+
+.rightColumn {
+    padding-left: calc(var(--unit-space) * 2);
+    border-left: var(--border-weight) solid;
+    border-color:var(--accent-color);
+}
+
+.leftColumn {
+    margin-right: calc(var(--unit-space) * 2);
+}
+
+.picture {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pictureRight {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
