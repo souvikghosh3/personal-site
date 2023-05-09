@@ -1,6 +1,7 @@
 .cardGrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    margin: var(--unit-space) auto;
 }
 
 .headerGrid {
@@ -8,19 +9,19 @@
     grid-template-columns: 1fr 1fr;
 }
 
+.footer {
+    margin-top: calc(var(--unit-space) * 3);
+}
+
 .button {
     background-color: transparent;
     font-size:medium;
     font-weight: bold;
-    border-radius: 8px;
     border-style: none;
-    box-sizing: border-box;
     color: var(--primary-color);
     cursor: pointer;
     display: block;
     margin: auto 0 auto auto;
-    height: 40px;
-    text-align: center;
   }
   
   .button:hover {

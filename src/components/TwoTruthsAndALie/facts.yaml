@@ -15,11 +15,22 @@
   explanation:
     >
     I have one older sister.
-- fact: I have played music in a video game
+- fact: I have played music for a video game soundtrack
   truth: true
   explanation:
     >
     I played tabla in some background music for Civilization IV.
+- fact: I can speak 3 or more languages
+  truth: true
+  explanation:
+    >
+    I speak English, Bengali, and (very broken) Spanish.
+- fact: I can whistle songs (well enough to be recognizable)
+  truth: true
+  explanation:
+    >
+    Much to the dismay of my girlfriend, I whistle random songs throughout the
+    day.
 
 # Lies
 - fact: I have never lived outside the U.S.
@@ -31,4 +42,14 @@
   truth: false
   explanation:
     >
-    I have never been skydiving (and I have no desire to :P).
+    I have never been skydiving (and I have no desire to :) ).
+- fact: I broke my foot playing tennis when I was 12
+  truth: false
+  explanation:
+    >
+    I have never broken a bone.
+- fact: I have a pet dog
+  truth: false
+  explanation:
+    >
+    I do not have a pet dog (yet :) ).

@@ -3,20 +3,15 @@ import React, { useEffect, useState } from 'react'
 import Card from './Card';
 import * as styles from './Game.module.css';
 
-/**
- * 
- * TODO:
- *  1. When a card is selected, flip it over to reveal whether it is a truth or
- *     a lie.
- *  2. If the selected card is the lie, reveal all other cards.
- *  3. If the selected card is a truth, prompt user to try another card.
- *  4. Show prompts as a heading underneath the fact cards
- *    a. On selecting a truth, "Select another card to try again!"
- *    b. On selecting the lie, "You got it!"
- *    c. Have the heading fade in, or animated to appear smoothly!
- * 
- */
 export default function Game() {
+  /* Represents the state of the game. Game is in progress if a truth is selected, and
+     is finished once the lie is selected. */
+  enum State {
+    New,
+    InProgress,
+    Finished,
+  }
+
   const data = useStaticQuery(graphql`
     query Facts {
       allFactsYaml {
@@ -32,16 +27,52 @@ export default function Game() {
 
   const [facts, setFacts] = useState<Queries.FactsYaml[]>([]);
   const [showExplanations, setShowExplanations] = useState(false);
+  const [state, setState] = useState<State>(State.New);
+  /* The unique ids will be used to make sure that the Cards are re-rendered
+     whenever the data is refreshed, but not throughout the game. The
+     re-rendering will trigger the appropriate animation. */
+  const [uniqueIds, setUniqueIds] = useState<string[]>([]);
 
   useEffect(() => setFacts(getRandomFacts(data.allFactsYaml.nodes)), [data]);
 
   function resetGame() {
+    setState(State.New);
     setShowExplanations(false);
     setFacts(getRandomFacts(data.allFactsYaml.nodes));
   }
 
-  function selectLie() {
+  function selectTruth() {
+    setState(State.InProgress);
+  }
+
+  async function revealCards() {
+    setState(State.Finished);
+    // Delay for 1 second so user can see they picked the lie first.
+    await new Promise(f => setTimeout(f, 1000));
     setShowExplanations(true);
+  }
+
+  /* Given a list of facts, return a list of 2 random truths and 1 random lie.*/
+  function getRandomFacts(facts: Queries.FactsYaml[]): Queries.FactsYaml[] {
+    const truths = facts.filter(fact => fact.truth);
+    const lies = facts.filter(fact => !fact.truth);
+
+    var lie_idx = Math.floor(Math.random() * lies.length);
+    var first_truth_idx = Math.floor(Math.random() * truths.length);
+    var second_truth_idx = Math.floor(Math.random() * truths.length);
+
+    // Make sure the second truth is different from the first one.
+    while (second_truth_idx == first_truth_idx) {
+      second_truth_idx = Math.floor(Math.random() * truths.length);
+    }
+
+    // Construct the array of selected facts, shuffle its order, and return.
+    var ret = [lies[lie_idx], truths[first_truth_idx], truths[second_truth_idx]];
+    shuffleArray(ret);
+
+    setUniqueIds(ret.map(fact => fact.id.concat(Date.now().toString())));
+
+    return ret;
   }
 
   return (
@@ -51,36 +82,22 @@ export default function Game() {
         <button className={styles.button} onClick={resetGame}>Reset</button>
       </div>
       <div className={styles.cardGrid}>
-        {facts.map((fact) => (
+        {facts.map((fact, index) => (
           <Card
-            key={fact.id.concat(Date.now().toString())}
+            key={uniqueIds[index]}
             fact={fact}
-            selectLie={selectLie}
+            selectLie={revealCards}
+            selectTruth={selectTruth}
             showExplanation={showExplanations}/>
         ))}
       </div>
+      <div className={styles.footer}>
+        {state == State.New ? <h1>Click on the card you think contains the lie</h1> : <></>}
+        {state == State.InProgress ? <h1>Select another card to try again</h1> : <></>}
+        {state == State.Finished ? <h1>You got it!</h1> : <></>}
+      </div>
     </>
   );
-}
-
-/* Given a list of facts, return a list of 2 random truths and 1 random lie.*/
-function getRandomFacts(facts: Queries.FactsYaml[]): Queries.FactsYaml[] {
-  const truths = facts.filter(fact => fact.truth);
-  const lies = facts.filter(fact => !fact.truth);
-
-  var lie_idx = Math.floor(Math.random() * lies.length);
-  var first_truth_idx = Math.floor(Math.random() * truths.length);
-  var second_truth_idx = Math.floor(Math.random() * truths.length);
-
-  // Make sure the second truth is different from the first one.
-  while (second_truth_idx == first_truth_idx) {
-    second_truth_idx = Math.floor(Math.random() * truths.length);
-  }
-
-  // Construct the array of selected facts, shuffle its order, and return.
-  var ret = [lies[lie_idx], truths[first_truth_idx], truths[second_truth_idx]];
-  shuffleArray(ret);
-  return ret;
 }
 
 /* Fisher-Yates algorithm for shuffling an array. */
