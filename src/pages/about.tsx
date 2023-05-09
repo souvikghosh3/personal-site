@@ -1,6 +1,7 @@
 import { StaticImage } from "gatsby-plugin-image"
 import React from 'react'
 import Layout from '../components/Layout'
+import Game from "../components/TwoTruthsAndALie/Game";
 
 import * as styles from './about.module.css';
 
@@ -19,7 +20,7 @@ export default function About() {
                 placeholder="blurred"
                 loading="eager"
                 layout="fixed"
-                width={350}
+                width={300}
                 />
             </div>
             <div className={styles.rightColumn}>
@@ -44,7 +45,7 @@ export default function About() {
             <div className={styles.leftColumn}>
               <h3>Music</h3>
               <p>
-                I play the Tabla, a percussion instrument originating from the
+                I play the tabla, a percussion instrument originating from the
                 Indian subcontinent. I have been learning this instrument since
                 the age of 10 from a number of wonderful teachers, and am
                 currently studying under the tutelage of&nbsp;
@@ -57,6 +58,11 @@ export default function About() {
                 </a>
                 .
               </p>
+              <p>
+                I enjoy practicing and performing with other Hindustani
+                classical musicians, and I have also started teaching tabla
+                classes recently.
+              </p>
             </div>
             <div className={styles.rightColumn}>
               <StaticImage
@@ -66,7 +72,7 @@ export default function About() {
                 placeholder="blurred"
                 loading="eager"
                 layout="fixed"
-                width={350}
+                width={300}
                 />
             </div>
             
@@ -80,18 +86,40 @@ export default function About() {
                 placeholder="blurred"
                 loading="eager"
                 layout="fixed"
-                width={350}
+                width={300}
                 />
             </div>
             <div className={styles.rightColumn}>
               <h3>Hobbies</h3>
               <p>
-                In my free time, I enjoy hiking, reading, and gaming.
+                I love spending time in the outdoors, going and walks
+                and hikes whenever possible. The photo on the left is from
+                a hike on the {}
+                <a 
+                    href="https://www.nps.gov/yose/planyourvisit/mirrorlaketrail.htm"
+                    target="_blank"
+                    rel="noreferrer"
+                    >
+                    mirror lake trail
+                </a> {}
+                during a trip my girlfriend
+                and I took to {}
+                <a 
+                    href="https://www.nps.gov/yose/index.htm"
+                    target="_blank"
+                    rel="noreferrer"
+                    >
+                    Yosemite National Park
+                </a>!
+              </p>
+              <p>
+                I also enjoy reading and gaming in my free time. In general,
+                I enjoy fantasy and sci-fi adventures. Some of my favorite
+                books are the Eragon series, and Enders Game.
               </p>
             </div>
           </section>
         </article>
     </Layout>
-    
-  )
+  );
 }

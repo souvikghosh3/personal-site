@@ -1,0 +1,30 @@
+.cardGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.headerGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.button {
+    background-color: transparent;
+    font-size:medium;
+    font-weight: bold;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: var(--primary-color);
+    cursor: pointer;
+    display: block;
+    margin: auto 0 auto auto;
+    height: 40px;
+    text-align: center;
+  }
+  
+  .button:hover {
+    color: var(--accent-color);
+    transition: color 0.3s;
+  }
+  

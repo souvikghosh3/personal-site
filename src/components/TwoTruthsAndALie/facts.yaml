@@ -1,0 +1,34 @@
+# Truths
+- fact: I played on my high school tennis team
+  truth: true
+  explanation:
+    >
+    I grew up playing tennis, and played on my high school
+    tennis team all four years.
+- fact: I have set foot in 3 or more continents
+  truth: true
+  explanation:
+    >
+    I have set foot in North America, Europe, and Asia.
+- fact: I have one older sibling
+  truth: true
+  explanation:
+    >
+    I have one older sister.
+- fact: I have played music in a video game
+  truth: true
+  explanation:
+    >
+    I played tabla in some background music for Civilization IV.
+
+# Lies
+- fact: I have never lived outside the U.S.
+  truth: false
+  explanation:
+    >
+    My family and I lived in India for a couple of years.
+- fact: I have been skydiving 3 or more times
+  truth: false
+  explanation:
+    >
+    I have never been skydiving (and I have no desire to :P).

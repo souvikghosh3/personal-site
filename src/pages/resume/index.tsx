@@ -82,7 +82,7 @@ export default function Resume({ data }: PageProps<Queries.ResumeQuery>) {
         </section>
     </Layout>
     
-  )
+  );
 }
 
 export const query = graphql`

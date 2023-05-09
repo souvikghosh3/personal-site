@@ -9,5 +9,5 @@ export default function NotFoundPage() {
         <p>Sorry this resource was not found.</p>
       </article>
     </Layout>
-  )
+  );
 }

@@ -15,8 +15,8 @@ export default function Home() {
           placeholder="blurred"
           loading="eager"
           layout="fixed"
-          width={350}
-          height={350}
+          width={300}
+          height={300}
           />
         <div className={styles.rightColumn}>
           <p>Hello there!</p>
@@ -39,5 +39,5 @@ export default function Home() {
         </div>
       </article>
     </Layout>
-  )
+  );
 }
