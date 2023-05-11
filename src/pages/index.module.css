@@ -1,16 +1,13 @@
 /* Styles for showing a picture and text side-by-side */
 .pictureTextContent {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    text-align:left;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--unit-space);
 }
 
-.rightColumn {
-    padding-left: calc(var(--unit-space) * 2);
-    border-left: var(--border-weight) solid;
-    border-color:var(--accent-color);
+.message {
+    max-width: 720px;
 }
 
-.leftColumn {
-    margin-right: calc(var(--unit-space) * 2);
-}
+
+

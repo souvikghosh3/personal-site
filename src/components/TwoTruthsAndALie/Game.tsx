@@ -4,12 +4,19 @@ import Card from './Card';
 import * as styles from './Game.module.css';
 
 export default function Game() {
-  /* Represents the state of the game. Game is in progress if a truth is selected, and
-     is finished once the lie is selected. */
+  /**
+   * Represents the state of the game.
+   * 
+   * New:         No cards have been selected.
+   * InProgress:  One truth has been selected.
+   * Lost:        Both truths have been selected.
+   * Won:         The lie has been selected.
+   */ 
   enum State {
     New,
     InProgress,
-    Finished,
+    Lost,
+    Won,
   }
 
   const data = useStaticQuery(graphql`
@@ -42,13 +49,17 @@ export default function Game() {
   }
 
   function selectTruth() {
-    setState(State.InProgress);
+    if (state == State.New) {
+      setState(State.InProgress);
+    } else {
+      setState(State.Lost);
+      setShowExplanations(true);
+    }
+    
   }
 
-  async function revealCards() {
-    setState(State.Finished);
-    // Delay for 1 second so user can see they picked the lie first.
-    await new Promise(f => setTimeout(f, 1000));
+  function revealCards() {
+    setState(State.Won);
     setShowExplanations(true);
   }
 
@@ -78,7 +89,7 @@ export default function Game() {
   return (
     <>
       <div className={styles.headerGrid}>
-        <h3>Two Truths and a Lie</h3>
+        <Header/>
         <button className={styles.button} onClick={resetGame}>Reset</button>
       </div>
       <div className={styles.cardGrid}>
@@ -91,13 +102,23 @@ export default function Game() {
             showExplanation={showExplanations}/>
         ))}
       </div>
-      <div className={styles.footer}>
-        {state == State.New ? <h1>Click on the card you think contains the lie</h1> : <></>}
-        {state == State.InProgress ? <h1>Select another card to try again</h1> : <></>}
-        {state == State.Finished ? <h1>You got it!</h1> : <></>}
-      </div>
     </>
   );
+
+  function Header() {
+    switch(state) {
+      case State.New:
+        return (<h1>Select the card you think contains the lie</h1>);
+      case State.InProgress:
+        return (<h1>Incorrect! Select another card to try again</h1>);
+      case State.Lost:
+        return (<h1>Better luck next time! Reset the game to play again</h1>);
+      case State.Won:
+        return (<h1>You got it! Reset the game to play again</h1>);
+      default:
+        return (<h1>Reset the game to play again</h1>);
+    }
+  }
 }
 
 /* Fisher-Yates algorithm for shuffling an array. */

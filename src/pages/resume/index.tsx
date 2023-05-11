@@ -9,61 +9,51 @@ export default function Resume({ data }: PageProps<Queries.ResumeQuery>) {
         <section>
             <h2>EXPERIENCE</h2>
             {data.allJobsYaml.nodes.map((job) => (
-                <div key={job.id} className={styles.row}>
-                    <div className={styles.jobLogoColumn}>
-                        <h3>
-                            <a 
-                                href={job.link || undefined}
-                                target="_blank"
-                                rel="noreferrer"
-                                >
-                                {job.name}
-                            </a>
-                        </h3>
-                        <div>
-                            <span>{job.start_date}</span> - {}
-                            <span>{job.end_date}</span>
-                        </div>
-                        <div className={styles.location}>{job.location}</div>
+                <div key={job.id}>
+                    <h3 className={styles.header}>
+                        <a 
+                            href={job.link || undefined}
+                            target="_blank"
+                            rel="noreferrer"
+                            >
+                            {job.name}
+                        </a>, {job.title} - {}
+                        <span className={styles.location}>{job.location}</span>
+                    </h3>
+                    <div className={styles.dates}>
+                        <span>{job.start_date}</span> - {}
+                        <span>{job.end_date}</span>
                     </div>
-                    <div className={styles.jobDetailColumn}>
-                        <h3>{job.title}</h3>
-                        <ul>
-                            {job.details?.map((detail) => (
-                                <li key={detail}>{detail}</li>
-                            ))}
-                        </ul>
-                    </div>
+                    <ul>
+                        {job.details?.map((detail) => (
+                            <li key={detail}>{detail}</li>
+                        ))}
+                    </ul>
                 </div>
             ))}
         </section>
         
         <section>
             <h2>EDUCATION</h2>
-            <div className={styles.row}>
-                <div className={styles.jobLogoColumn}>
-                    <h3>
-                        <a 
-                            href="https://www.umd.edu/"
-                            target="_blank"
-                            rel="noreferrer"
-                            >
-                            University of Maryland
-                        </a>
-                    </h3>
-                    <div>
-                        <span>AUG 2013</span> - {}
-                        <span>MAY 2017</span>
-                    </div>
-                    <div className={styles.location}>College Park, MD</div>
+            <div>
+                <h3 className={styles.header}>
+                    <a 
+                        href="https://www.umd.edu/"
+                        target="_blank"
+                        rel="noreferrer"
+                        >
+                        University of Maryland
+                    </a>, B.S. Computer Engineering - {}
+                    <span className={styles.location}>College Park, MD</span>
+                </h3>
+                <div className={styles.dates}>
+                    <span>AUG 2013</span> - {}
+                    <span>MAY 2017</span>
                 </div>
-                <div className={styles.jobDetailColumn}>
-                    <h3>B.S. Computer Engineering</h3>
-                    <ul>
-                        <li>GPA: 3.87</li>
-                        <li>Honors College</li>
-                    </ul>
-                </div>
+                <ul>
+                    <li>GPA: 3.87</li>
+                    <li>Honors College</li>
+                </ul>
             </div>
 
         </section>

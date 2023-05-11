@@ -1,30 +1,18 @@
-.row {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    margin-bottom: var(--unit-space);
-}
-
 section {
     margin-bottom: var(--unit-space);
 }
 
-.jobLogoColumn,
-.jobDetailColumn {
-    color: var(--text-color);
-}
-
-.jobLogoColumn {
+.dates {
     font-size: var(--font-0);
-    padding-right: var(--unit-space);
-}
-
-.jobDetailColumn {
-    line-height: var(--unit-space);
-    padding-left: calc(var(--unit-space) * 2);
-    border-left: var(--border-weight) solid;
-    border-color:var(--accent-color);
+    margin-bottom: calc(var(--unit-space) / 2);
 }
 
 .location {
     font-style:italic;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.header {
+    line-height: var(--unit-space);
 }

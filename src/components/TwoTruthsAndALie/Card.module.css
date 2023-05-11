@@ -3,7 +3,8 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 8px;
-  height: 300px;
+  min-height: 325px;
+  max-width: 315px;
 }
 
 /* Increasing animation length for each subsequent card creates a cascade effect. */
@@ -32,11 +33,6 @@
 @keyframes slideUp {
   0% { transform: translateY(calc(var(--unit-space) * 4)); }
   100% { transform: none; }
-}
-
-/* This will add spacing between the cards. */
-.card + .card {
-  margin-left: var(--unit-space);
 }
 
 /* On mouse-over, add a deeper shadow. */

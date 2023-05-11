@@ -1,16 +1,15 @@
 .cardGrid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    /* TODO: find the right configuration so that the grid fits
+             as many cards as possible on a row*/
+    grid-template-columns: repeat(auto-fill, 315px);
     margin: var(--unit-space) auto;
+    gap: var(--unit-space);
 }
 
 .headerGrid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.footer {
-    margin-top: calc(var(--unit-space) * 3);
+    grid-template-columns: 2fr 1fr;
 }
 
 .button {

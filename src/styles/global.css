@@ -49,9 +49,23 @@ html, body {
 }
 
 p {
-    margin: var(--unit-space) auto;
     line-height: var(--unit-space);
     color:var(--text-color);
+}
+
+ul,
+p,
+.gatsby-image-wrapper {
+  margin-bottom: var(--unit-space);
+}
+
+ul {
+  margin-inline-start: var(--unit-space);
+}
+
+li {
+  margin-bottom: calc(var(--unit-space) / 2);
+  color:var(--text-color);
 }
 
 /* Layout styles */
@@ -95,4 +109,11 @@ a:visited {
 
 a:hover {
     color: var(--accent-color)
+}
+
+/* Add horizontal margins for small screen sizes (i.e. mobile). */
+@media screen and (width <= calc(1000px + 2em)) {
+    body {
+        margin: 0 1em;
+    }
 }

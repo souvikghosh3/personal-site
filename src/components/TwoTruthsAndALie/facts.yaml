@@ -29,8 +29,8 @@
   truth: true
   explanation:
     >
-    Much to the dismay of my girlfriend, I whistle random songs throughout the
-    day.
+    Much to the annoyance of my girlfriend, I usually whistle random songs
+    throughout the day.
 
 # Lies
 - fact: I have never lived outside the U.S.
@@ -42,14 +42,14 @@
   truth: false
   explanation:
     >
-    I have never been skydiving (and I have no desire to :) ).
+    I have never been skydiving ( and I have no desire to :) ).
 - fact: I broke my foot playing tennis when I was 12
   truth: false
   explanation:
     >
-    I have never broken a bone.
+    I have fortunately never broken a bone.
 - fact: I have a pet dog
   truth: false
   explanation:
     >
-    I do not have a pet dog (yet :) ).
+    I do not have a pet dog ( yet :) ).
