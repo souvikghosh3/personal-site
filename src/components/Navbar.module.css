@@ -1,0 +1,101 @@
+.header {
+    margin: calc(var(--unit-space) * 1) auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+.nav {
+    background: hsl(0 0% 100%);
+}
+
+.nav a {
+    display: inline-block;
+    margin-left: var(--unit-space);
+    font-weight: 400;
+    padding-bottom: calc(var(--unit-space) / 2);
+    border-bottom: var(--border-weight) solid transparent;
+}
+
+.nav a:hover {
+    border-color: var(--accent-color);
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+@media (max-width: 35em) {
+    .nav {
+        --gap: 2em;
+        
+        position: fixed;
+        /* This should be visible above most other elements. */
+        z-index: 1000;
+        inset: 0 0 0 60%;
+
+        flex-direction: column;
+        padding: min(30vh, 8rem) 2em;
+
+        transform: translateX(100%);
+        transition: transform 350ms ease;
+    }
+
+    .expanded {
+        transform: TranslateX(0%);
+        
+    }
+
+    /* Remove link accent underline for mobile as it appears incorrectly. */
+    .expanded a:hover {
+        border-color:transparent;
+    }
+
+    /* If browser supports blur, use blurred background. Otherwise, gray. */
+    .nav, .expanded {
+        background: hsl(0 0% 95%);
+    }
+
+    @supports (backdrop-filter: blur(1rem)) {
+        .expanded, .nav {
+            background: hsl(0 0% 50% / 0.1);
+            backdrop-filter: blur(1rem);
+        }
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        /* This should always be visible above all elements. */
+        z-index: 9999;
+        width: 2rem;
+        border: 0;
+        aspect-ratio: 1;
+        /* Manually set top position to align with the header element. */
+        top: 2.5rem;
+        right: 1rem;
+        background-color: transparent;
+    }
+}
+
+.icon {
+    fill: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Annotates an element that is not meant to be visible, but is present for
+   the screenreader.*/
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }

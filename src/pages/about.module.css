@@ -1,30 +1,13 @@
-/* Styles for showing a picture and text side-by-side */
-.pictureTextContent {
+/* On larger screens, each section should show text and picture side by side.
+   On smaller screens, picture will be below text. */
+.picture-text-content {
     display: grid;
-    
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     margin: var(--unit-space) auto;
     gap: var(--unit-space);
 }
 
-.rightColumn {
-    max-width: 100%;
-    overflow: wrap;
-}
-
-.leftColumn {
-    max-width: 100%;
-    overflow:wrap;
-}
-
-.para {
-    overflow:wrap;
-}
-
 .picture {
+    /* Center images inside gatsby-image wrapper. */
     margin: auto;
-}
-
-.header {
-    margin-bottom: calc(var(--unit-space));
 }

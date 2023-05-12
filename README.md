@@ -97,3 +97,20 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web. And also the best place to build, deploy, and host your Gatsby sites.
 
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+TODO
+
+- Verify browser compatibility, especially for animations in game
+- Modify spacing / margins on all pages to make better use of available screen space
+  - Maybe decrease default screen width to better display content
+  - Add custom width and font sizing / spacing for resume since it's text heavy
+  - Add some visual break up of content in About page, highlighting the grid pattern
+- Make global vars for information used in multiple places (i.e. Linkedin URL)
+- Make some global utility functions for commonly used elements (i.e. anchor tag given url)
+- Centralize commonly used styles into global utility css classes (i.e. flex, grid, etc.)
+- Improve animations for two truths and a lie game so cards don't resize with each other
+- Test for accessibility and screenreader support
+- Add links to LinkedIn / Github on navbar
+- Add support for dark theme
+- Add independent projects to website
+- Add blog to website

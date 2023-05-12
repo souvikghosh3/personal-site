@@ -1,12 +1,15 @@
-/* Styles for showing a picture and text side-by-side */
-.pictureTextContent {
+.picture-text-content {
     display: flex;
-    flex-wrap: wrap;
     gap: 0 var(--unit-space);
+    flex-wrap: wrap;
+    /* Push the picture to the far end of the screen to align with right edge. */
+    justify-content: space-between;
 }
 
 .message {
-    max-width: 720px;
+    /* Arbitrary max width to allow text and picture to appear side by side on
+        larger width screens. */
+    max-width: 650px;
 }
 
 

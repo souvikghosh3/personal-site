@@ -1,29 +1,33 @@
 .card {
-  /* Add shadows to create the "card" effect. */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
+  transition: 0.2s;
+  
   border-radius: 8px;
-  min-height: 325px;
-  max-width: 315px;
+  cursor: pointer;
+
+  /* Override default button styles to make content inside appear normal. */
+  border-style: none;
+  background-color: transparent;
+  font-size: inherit;
+  display: inherit;
+  /* Max height is a hack to prevent all cards from resizing when the row
+     height increases. Need to find a better solution for this. */
+  max-height: 130px;
+
+  /* This animation will happen on initial card render. */
+  animation: fadeIn var(--animation-time), slideUp var(--animation-time);
+}
+
+/* Follow up on hack above, when the card is expanded, remove limits
+   on height. */
+.expanded {
+  max-height: 100%;
 }
 
 /* Increasing animation length for each subsequent card creates a cascade effect. */
-/* This animation will happen on initial card render. */
-.card:nth-child(1) {
-  animation: fadeIn .8s, slideUp .8s;
-}
-
-.card:nth-child(2) {
-  animation: fadeIn 1s, slideUp 1s;
-}
-
-.card:nth-child(3) {
-  animation: fadeIn 1.2s, slideUp 1.2s;
-}
-
-.explanation {
-  animation: fadeIn .8s;
-}
+.card:nth-child(1) { --animation-time: .8s }
+.card:nth-child(2) { --animation-time: 1s }
+.card:nth-child(3) { --animation-time: 1.2s }
 
 @keyframes fadeIn {
   0% { opacity: 0; }
@@ -35,12 +39,16 @@
   100% { transform: none; }
 }
 
-/* On mouse-over, add a deeper shadow. */
+.explanation {
+  /* This animation happens when the explanation is revealed. */
+  animation: fadeIn .8s;
+}
+
+/* On mouse-over, add a deeper shadow for user visibility. */
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-/* Add some padding inside the card container. */
 .container {
   padding: var(--unit-space);
 }
@@ -48,22 +56,4 @@
 /* Setting a fixed height helps the cards look consistent. */
 .fact {
   height: calc(var(--unit-space) * 2);
-}
-
-/* Button styles */
-.button {
-  background-color: transparent;
-  font-size:medium;
-  font-weight: bold;
-  border-style: none;
-  color: var(--primary-color);
-  cursor: pointer;
-  display: block;
-  margin: auto;
-  height: calc(var(--unit-space) * 2);
-}
-
-.button:hover {
-  color: var(--accent-color);
-  transition: color 0.3s;
 }

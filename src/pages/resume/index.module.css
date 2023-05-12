@@ -1,18 +1,19 @@
-section {
+.section {
     margin-bottom: var(--unit-space);
 }
 
 .dates {
     font-size: var(--font-0);
-    margin-bottom: calc(var(--unit-space) / 2);
+    margin-bottom: calc(var(--unit-space) / 4);
 }
 
 .location {
-    font-style:italic;
+    font-style: italic;
     font-weight: normal;
     white-space: nowrap;
 }
 
 .header {
+    /* Decrease line height for headers to keep content more compact. */
     line-height: var(--unit-space);
 }
