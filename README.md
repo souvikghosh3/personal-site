@@ -109,6 +109,7 @@ TODO
 - Make some global utility functions for commonly used elements (i.e. anchor tag given url)
 - Centralize commonly used styles into global utility css classes (i.e. flex, grid, etc.)
 - Improve animations for two truths and a lie game so cards don't resize with each other
+- Add unit tests for game logic
 - Test for accessibility and screenreader support
 - Add links to LinkedIn / Github on navbar
 - Add support for dark theme

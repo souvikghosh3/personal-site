@@ -30,9 +30,9 @@ export default function Navbar() {
         </button>
         
         <nav id="nav" className={navClassList}>
-            <Link to="/">Home</Link>
-            <Link to="/resume">Resume</Link>
-            <Link to="/about">About</Link>
+          <Link to="/">Home</Link>
+          <Link to="/resume">Resume</Link>
+          <Link to="/about">About</Link>
         </nav>
     </header>
   )  
@@ -63,10 +63,14 @@ function CloseIcon() {
 
 function HamburgerIcon() {
   return (
-    <svg className={styles.icon} viewBox="0 0 100 80" width="1.5rem" height="1.2rem" >
-      <rect rx="10" width="100" height="20"></rect>
-      <rect rx="10" y="30" width="100" height="20"></rect>
-      <rect rx="10" y="60" width="100" height="20"></rect>
+    <svg
+      className={styles.icon}
+      viewBox="0 0 100 80"
+      width="1.5rem"
+      height="1.2rem">
+        <rect rx="10" width="100" height="20"></rect>
+        <rect rx="10" y="30" width="100" height="20"></rect>
+        <rect rx="10" y="60" width="100" height="20"></rect>
     </svg>
   );
 }
