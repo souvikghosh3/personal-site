@@ -38,7 +38,7 @@ export default function About() {
           <div>
             <StaticImage
               className={styles.picture}
-              src="..\images\career.jpg"
+              src="../images/career.jpg"
               alt="portrait"
               placeholder="blurred"
               loading="eager"
@@ -80,7 +80,7 @@ export default function About() {
           <div>
             <StaticImage
               className={styles.picture}
-              src="..\images\music.jpeg"
+              src="../images/music.jpeg"
               alt="tabla"
               placeholder="blurred"
               loading="eager"
@@ -122,7 +122,7 @@ export default function About() {
           <div>
             <StaticImage
               className={styles.picture}
-              src="..\images\hiking.jpg"
+              src="../images/hiking.jpg"
               alt="hiking"
               placeholder="blurred"
               loading="eager"

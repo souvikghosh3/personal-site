@@ -56,7 +56,7 @@ export default function Home() {
           </p>
         </div>
         <StaticImage
-          src="..\images\portrait_square.jpg"
+          src="../images/portrait_square.jpg"
           alt="portrait"
           placeholder="blurred"
           loading="eager"
