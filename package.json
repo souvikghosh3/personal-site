@@ -10,7 +10,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "gatsby": "^5.9.0",
+    "gatsby": "^5.9.1",
     "gatsby-plugin-image": "^3.9.0",
     "gatsby-plugin-netlify": "^5.1.0",
     "gatsby-plugin-sharp": "^5.9.0",
