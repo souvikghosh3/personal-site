@@ -1,6 +1,6 @@
 # [souvikghosh3.com](https://souvikghosh3.com)
 
-This website was built using [the hello world starter template](https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-hello-world) by [Gatsby](https://www.gatsbyjs.com/), and is deployed using [Netlify](https://www.netlify.com/).
+This website was built using the [hello world starter template](https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-hello-world) by [Gatsby](https://www.gatsbyjs.com/), and is deployed using [Netlify](https://www.netlify.com/).
 
 ## Setup
 
@@ -39,6 +39,10 @@ npm clean
 ## Deploying
 
 All pushes to the main branch are automatically picked up and deployed by Netlify.
+
+Deploy status:
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cf644878-47a2-402b-9b83-2ecaeef7084c/deploy-status)](https://app.netlify.com/sites/cute-griffin-d0a31f/deploys)
 
 ## TODO list
 
